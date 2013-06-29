@@ -5,12 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Blog Archive - Jerry大侠</title>
+  <title>设置octopress环境遇到的问题 - Jerry大侠</title>
   <meta name="author" content="Jerry Lee">
 
   
-  <meta name="description" content="Blog Archive 2013 设置octopress环境遇到的问题
-Jun 29 2013 最近的 设置octopress环境遇到的问题 新浪微博 <iframe width="100%" height="550" class="share_self" frameborder="0" &hellip;">
+  <meta name="description" content="Failed to connect to toolbelt.heroku.com 当执行以下命令安装Ruby时，我一直出现连接toolbelt.heroku.com失败，尝试了N种方案，换网络，加代理，走VPN，走Goagent均失败: 1
+curl -L https://get.rvm.io &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +19,7 @@ Jun 29 2013 最近的 设置octopress环境遇到的问题 新浪微博 <iframe 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://jerrylee007.github.io/blog/archives">
+  <link rel="canonical" href="http://jerrylee007.github.io/blog/2013/06/29/trouble-shooting-when-setup-octopress">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Jerry大侠" type="application/atom+xml">
@@ -64,32 +64,113 @@ Jun 29 2013 最近的 设置octopress环境遇到的问题 新浪微博 <iframe 
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Blog Archive</h1>
+    
+      <h1 class="entry-title">设置octopress环境遇到的问题</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-06-29T12:49:00+00:00" pubdate data-updated="true">Jun 29<span>th</span>, 2013</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives">
 
 
+<div class="entry-content"><h3>Failed to connect to toolbelt.heroku.com</h3>
 
-  
-  <h2>2013</h2>
+<p>当执行以下命令安装Ruby时，我一直出现连接toolbelt.heroku.com失败，尝试了N种方案，换网络，加代理，走VPN，走Goagent均失败:</p>
 
-<article>
-  
-<h1><a href="/blog/2013/06/29/trouble-shooting-when-setup-octopress/">设置octopress环境遇到的问题</a></h1>
-<time datetime="2013-06-29T12:49:00+00:00" pubdate><span class='month'>Jun</span> <span class='day'>29</span> <span class='year'>2013</span></time>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>curl -L https://get.rvm.io | bash -s stable --ruby</span></code></pre></td></tr></table></div></figure>
 
 
-</article>
+<p>or</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rvm install 1.9.3</span></code></pre></td></tr></table></div></figure>
+
+
+<p>最后使用一牛人的脚本搞定:</p>
+
+<p><a href="http://www.isotope11.com/blog/update-v1-dot-0-1-quickly-get-a-fresh-ubuntu-install-ready-for-ruby-dev">http://www.isotope11.com/blog/update-v1-dot-0-1-quickly-get-a-fresh-ubuntu-install-ready-for-ruby-dev</a></p>
+
+<h3>Liquid Exception: incompatible character encodings: UTF-8 and ISO-8859-1 in post</h3>
+
+<p>当调用<em>rake generate</em>时可能会出现这个错误，因为jekyll默认不支持中文，在<em>.bash_profile</em>中添加以下环境变量即可解决：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>export LC_ALL=en_US.UTF-8
+</span><span class='line'>export LANG=en_US.UTF-8</span></code></pre></td></tr></table></div></figure>
+
+
 
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Jerry Lee</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-06-29T12:49:00+00:00" pubdate data-updated="true">Jun 29<span>th</span>, 2013</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://jerrylee007.github.io/blog/2013/06/29/trouble-shooting-when-setup-octopress/" data-via="" data-counturl="http://jerrylee007.github.io/blog/2013/06/29/trouble-shooting-when-setup-octopress/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+      
+    </p>
+  </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -144,7 +225,10 @@ Jun 29 2013 最近的 设置octopress环境遇到的问题 新浪微博 <iframe 
       var disqus_shortname = 'jerryleeblog';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://jerrylee007.github.io/blog/2013/06/29/trouble-shooting-when-setup-octopress/';
+        var disqus_url = 'http://jerrylee007.github.io/blog/2013/06/29/trouble-shooting-when-setup-octopress/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

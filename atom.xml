@@ -1,16 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
+  <title><![CDATA[Jerry大侠]]></title>
   <link href="http://jerrylee007.github.io/atom.xml" rel="self"/>
   <link href="http://jerrylee007.github.io/"/>
-  <updated>2013-06-27T03:17:40+00:00</updated>
+  <updated>2013-06-29T14:58:04+00:00</updated>
   <id>http://jerrylee007.github.io/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[Jerry Lee]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[设置octopress环境遇到的问题]]></title>
+    <link href="http://jerrylee007.github.io/blog/2013/06/29/trouble-shooting-when-setup-octopress/"/>
+    <updated>2013-06-29T12:49:00+00:00</updated>
+    <id>http://jerrylee007.github.io/blog/2013/06/29/trouble-shooting-when-setup-octopress</id>
+    <content type="html"><![CDATA[<h3>Failed to connect to toolbelt.heroku.com</h3>
+
+<p>当执行以下命令安装Ruby时，我一直出现连接toolbelt.heroku.com失败，尝试了N种方案，换网络，加代理，走VPN，走Goagent均失败:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>curl -L https://get.rvm.io | bash -s stable --ruby</span></code></pre></td></tr></table></div></figure>
+
+
+<p>or</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rvm install 1.9.3</span></code></pre></td></tr></table></div></figure>
+
+
+<p>最后使用一牛人的脚本搞定:</p>
+
+<p><a href="http://www.isotope11.com/blog/update-v1-dot-0-1-quickly-get-a-fresh-ubuntu-install-ready-for-ruby-dev">http://www.isotope11.com/blog/update-v1-dot-0-1-quickly-get-a-fresh-ubuntu-install-ready-for-ruby-dev</a></p>
+
+<h3>Liquid Exception: incompatible character encodings: UTF-8 and ISO-8859-1 in post</h3>
+
+<p>当调用<em>rake generate</em>时可能会出现这个错误，因为jekyll默认不支持中文，在<em>.bash_profile</em>中添加以下环境变量即可解决：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>export LC_ALL=en_US.UTF-8
+</span><span class='line'>export LANG=en_US.UTF-8</span></code></pre></td></tr></table></div></figure>
+
+
+
+]]></content>
+  </entry>
   
 </feed>
